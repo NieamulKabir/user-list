@@ -35,6 +35,16 @@ const Header = () => {
               <button className="">Home</button>
             </NavLink>
           </li>
+          <li
+            className={`${
+              active === "/allUser" ? "text-green-300" : "text-white"
+            } hover:text-white text-[18px] font-medium cursor-pointer`}
+            onClick={() => setActive("/allUser")}
+          >
+            <NavLink to="/allUser">
+              <button className="">All-Users</button>
+            </NavLink>
+          </li>
 
           {/* login  */}
         </ul>
