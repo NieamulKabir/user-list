@@ -13,15 +13,15 @@ const User = () => {
       user.firstName.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredUsers(filtered);
+    searchTerm("");
   }
-  console.log(users);
 
   return (
     <div className="min-h-screen max-w-7xl mx-auto">
       <h1 className="text-center text-xl md:text-4xl  font-bold mt-10 mb-4">
         User Lists
       </h1>
-      <SearchUser  onSearch={handleSearch}/>
+      <SearchUser onSearch={handleSearch} setFilteredUsers={setFilteredUsers} />
       <UserListCard users={filteredUsers.length > 0 ? filteredUsers : users} />
     </div>
   );

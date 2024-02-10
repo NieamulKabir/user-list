@@ -1,29 +1,40 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { MdClear } from "react-icons/md";
 
-const SearchUser = ({ onSearch }) => {
-    const [searchTerm, setSearchTerm] = useState();
-    function handleClick(event) {
-        event.preventDefault();
-        onSearch(searchTerm);
-      }
+const SearchUser = ({ onSearch, setFilteredUsers }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  function handleClick(event) {
+    event.preventDefault();
+    onSearch(searchTerm);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  const handleClear = () => {
+    setFilteredUsers([]);
+    setSearchTerm("");
+  };
   return (
-    <div>
-      <form>
+    <div className="mt-10 mr-6">
+      <form onSubmit={handleSubmit}>
         <div className="flex justify-end">
           <div className="relative overflow-hidden rounded-lg text-gray-50 md:min-w-[380px] lg:min-w-[440px]">
             <input
               type="search"
               id="search-dropdown"
               className="z-20 block w-full bg-gray-800 px-4 py-2 pr-10 focus:outline-none"
-              placeholder="Search Task"
-                onChange={() => setSearchTerm(event.target.value)}
+              placeholder="Search User"
+              value={searchTerm}
+              onChange={() => setSearchTerm(event.target.value)}
               required
             />
+
             <button
-                onClick={handleClick}
+              onClick={handleClick}
               type="submit"
-              className="absolute right-2 top-0 h-full rounded-e-lg text-white md:right-4"
+              className="absolute  right-2 top-0 h-full rounded-e-lg text-white md:right-4"
             >
               <svg
                 className="h-4 w-4"
@@ -43,6 +54,12 @@ const SearchUser = ({ onSearch }) => {
               <span className="sr-only">Search</span>
             </button>
           </div>
+          <button
+            onClick={() => handleClear("")}
+            className="bg-red-500 text-white px-4 rounded-lg font-semibold ml-4 flex justify-center items-center"
+          >
+            <MdClear /> Clear
+          </button>
         </div>
       </form>
     </div>

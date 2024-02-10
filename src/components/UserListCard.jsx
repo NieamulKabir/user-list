@@ -5,7 +5,7 @@ const UserListCard = ({ users }) => {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6 py-10">
+    <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6 py-10 mx-6">
       {users?.map((user) => (
         <div key={user.id} className="card card-compact  bg-base-100 shadow-xl">
           <div className="avatar">
