@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
-import { FaUsers } from "react-icons/fa";
+
 
 const Header = () => {
   const [active, setActive] = useState("");
@@ -19,8 +19,8 @@ const Header = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-white font-mono font-extrabold flex justify-center text-4xl">
-            <FaUsers />
+          <p className="text-white font-mono font-extrabold flex justify-center text-3xl">
+            TechnoFix
           </p>
         </Link>
 
