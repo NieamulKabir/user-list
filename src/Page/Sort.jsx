@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const Sort = ({users,setFilteredUsers}) => {
-    const [sortOption, setSortOption] = useState("");
-      // Function to sort users based on selected option
+const Sort = ({ users, setFilteredUsers }) => {
+  const [sortOption, setSortOption] = useState("");
+  // Function to sort users based on selected option
   const sortUsers = (option) => {
     let sortedUsers = [...users];
     switch (option) {

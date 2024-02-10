@@ -7,6 +7,7 @@ const UserDetails = () => {
 
   const [userDetails, setUserDetails] = useState({});
 
+  //   show single user details
   useEffect(() => {
     fetch("https://dummyjson.com/users")
       .then((res) => res.json())
@@ -18,7 +19,8 @@ const UserDetails = () => {
   }, [id]);
 
   return (
-    <div className="mt-16 min-h-screen w-1/2 mx-auto pt-20 ">
+    <div className="mt-16 min-h-screen md:w-1/2  pt-20 mx-auto px-2">
+      <h1 className="font-bold text-center text-3xl mb-2">User Details</h1>
       <UserDetailCard userDetails={userDetails} />
     </div>
   );

@@ -1,4 +1,3 @@
-
 import HeroSection from "./HeroSection";
 import User from "./User";
 
