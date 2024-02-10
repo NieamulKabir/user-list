@@ -16,10 +16,9 @@ const UserDetails = () => {
       });
   }, [id]);
   const { image, firstName, lastName, email, address, company } = userDetails;
+  
   return (
-    <div className="mt-16 min-h-screen w-1/2 mx-auto pt-20">
-     
-
+    <div className="mt-16 min-h-screen w-1/2 mx-auto pt-20 ">
       <div className="card card-compact  bg-base-100 shadow-xl ">
         <div className="avatar">
           <div className="w-24 rounded-full">
