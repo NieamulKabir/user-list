@@ -4,7 +4,7 @@ import User from "./User";
 
 const Home = () => {
   return (
-    <div className="container mt-[60px] ">
+    <div className="mt-[60px]">
       <HeroSection />
       <User />
     </div>

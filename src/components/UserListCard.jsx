@@ -1,6 +1,8 @@
+import { NavLink } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const UserListCard = ({ users }) => {
-  console.log(users);
+
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6 py-10">
@@ -12,13 +14,18 @@ const UserListCard = ({ users }) => {
             </div>
           </div>
           <div className="card-body">
-            <h2 className="card-title">{user.firstName} {user.lastName}</h2>
+            <NavLink to={`/userDetails/${user?.id}`}>
+              <h2 className="card-title">
+                {user.firstName} {user.lastName}
+              </h2>
+            </NavLink>
+          
             <p>Email : {user.email}</p>
-            <p>address : {user?.address?.address} city:{user.address?.city}</p>
+            <p>
+              address : {user?.address?.address} city:{user.address?.city}
+            </p>
             <p>company : {user?.company?.name} </p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
+        
           </div>
         </div>
       ))}

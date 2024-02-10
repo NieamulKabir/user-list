@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <div>
+    <div className="min-w-screen w-full">
       <div
         className="hero min-h-96"
         style={{

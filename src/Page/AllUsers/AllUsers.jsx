@@ -6,7 +6,7 @@ const AllUsers = () => {
   const users = usersData?.users;
   console.log(users);
   return (
-    <div>
+    <div className="mt-16 mx-16">
       <UserListCard users={users} />
     </div>
   );

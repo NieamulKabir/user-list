@@ -5,7 +5,7 @@ import UserListCard from '../../components/UserListCard';
 const User = () => {
   const [usersData] = useUsers();
   const users = usersData?.users?.slice(0, 6);
-  console.log(users);
+  // console.log(users);
   // console.log(users.users);
 
   return (
