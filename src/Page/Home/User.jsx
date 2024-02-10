@@ -1,7 +1,7 @@
 import useUsers from "../../hooks/useUsers";
 import UserListCard from "../../components/UserListCard";
 import SearchUser from "../SearchUser";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Sort from "../Sort";
 
@@ -11,13 +11,13 @@ const User = () => {
 
   const users = usersData?.users?.slice(0, 6);
 
-
   //search user by Name
 
-
   function handleSearch(searchTerm) {
-    const filtered = users.filter((user) =>
-      user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) || user.lastName.toLowerCase().includes(searchTerm.toLowerCase())
+    const filtered = users.filter(
+      (user) =>
+        user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.lastName.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredUsers(filtered);
     searchTerm("");
