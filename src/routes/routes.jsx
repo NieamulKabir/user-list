@@ -3,6 +3,7 @@ import App from "../App";
 import Home from "../Page/Home/Home";
 import AllUsers from "../Page/AllUsers/AllUsers";
 import UserDetails from "../Page/UserDetails";
+import AddUserForm from "../Page/AddUserForm";
 
 const routes = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
         path: "/userDetails/:id",
         element: <UserDetails />,
       },
+      {
+        path:'/addUser',
+        element:<AddUserForm />
+      }
     ],
   },
 ]);

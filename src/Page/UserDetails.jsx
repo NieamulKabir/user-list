@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import UserDetailCard from "../components/UserDetailCard";
 
 const UserDetails = () => {
   let { id } = useParams();
@@ -16,28 +17,9 @@ const UserDetails = () => {
       });
   }, [id]);
 
-  const { image, firstName, lastName, email, address, company } = userDetails;
-
   return (
     <div className="mt-16 min-h-screen w-1/2 mx-auto pt-20 ">
-      <div className="card card-compact  bg-base-100 shadow-xl ">
-        <div className="avatar">
-          <div className="w-24 rounded-full">
-            <img src={image} />
-          </div>
-        </div>
-        <div className="card-body">
-          <h2 className="card-title">
-            {firstName} {lastName}
-          </h2>
-
-          <p>Email : {email}</p>
-          <p>
-            address : {address?.address} city:{address?.city}
-          </p>
-          <p>company : {company?.name} </p>
-        </div>
-      </div>
+      <UserDetailCard userDetails={userDetails} />
     </div>
   );
 };
