@@ -1,7 +1,8 @@
 import { useState } from "react";
 import UserListCard from "../../components/UserListCard";
 import useUsers from "../../hooks/useUsers";
-import SearchUser from "../Home/SearchUser";
+import SearchUser from "../SearchUser";
+import Sort from "../Sort";
 
 const AllUsers = () => {
   const [usersData] = useUsers();
@@ -15,11 +16,12 @@ const AllUsers = () => {
     setFilteredUsers(filtered);
     searchTerm("");
   }
-  console.log(users);
+
   return (
-    <div className="mt-16 mx-16 min-h-screen">
+    <div className="mt-16  min-h-screen max-w-7xl mx-auto">
       <h1 className="text-center text-4xl font-bold pt-10">See All Users</h1>
-      <SearchUser onSearch={handleSearch} setFilteredUsers={setFilteredUsers}/>
+      <SearchUser onSearch={handleSearch} setFilteredUsers={setFilteredUsers} />
+      <Sort setFilteredUsers={setFilteredUsers} users={users} />
       <UserListCard users={filteredUsers.length > 0 ? filteredUsers : users} />
     </div>
   );

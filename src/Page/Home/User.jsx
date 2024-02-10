@@ -1,12 +1,14 @@
 import useUsers from "../../hooks/useUsers";
 import UserListCard from "../../components/UserListCard";
-import SearchUser from "./SearchUser";
+import SearchUser from "../SearchUser";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Sort from "../Sort";
 
 const User = () => {
   const [usersData] = useUsers();
   const [filteredUsers, setFilteredUsers] = useState([]);
+
   const users = usersData?.users?.slice(0, 6);
 
   function handleSearch(searchTerm) {
@@ -22,10 +24,15 @@ const User = () => {
       <h1 className="text-center text-xl md:text-4xl  font-bold mt-10 mb-4">
         User Lists
       </h1>
+
       <SearchUser onSearch={handleSearch} setFilteredUsers={setFilteredUsers} />
+      <Sort setFilteredUsers={setFilteredUsers} users={users} />
+
       <UserListCard users={filteredUsers.length > 0 ? filteredUsers : users} />
       <NavLink to={`/allUser`}>
-        <button className="w-[150px] mx-auto bg-gray-800 text-white text-center flex justify-center  items-center mb-10 px-3 py-2 rounded-xl">See All Users</button>
+        <button className="w-[150px] mx-auto bg-gray-800 text-white text-center flex justify-center  items-center mb-10 px-3 py-2 rounded-xl">
+          See All Users
+        </button>
       </NavLink>
     </div>
   );
